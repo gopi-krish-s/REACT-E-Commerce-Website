@@ -1,38 +1,325 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-container{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: rgb(61, 51, 51);
+  justify-content: space-between;
+}
+.header-container h1{
+  color: aliceblue;
+}
+.link{
+  text-decoration: none;
+}
+.cart{
+  color: aliceblue;
+  height: 45px;
+  width: 45px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+.search-bar{
+  height: 33px;
+  width: 455px;
+ border-radius: 5%;
+ margin-right: 5px;
+ 
+
+
+}
+.bi-search{
+  color: aliceblue;
+  height: 37px;
+  width: 45px;
+  margin-right: 20px;
+  margin-top: 0px;
+  /* background-color: rgb(108, 175, 234); */
+  border-radius: 15%;
+}
+.search-container{
+  display: flex;
+   margin-right: 20px;
+  margin-top: 25px;
+  border-radius: 15%;
+}
+.image{
+  height: 377px;
+  width: 455px;
+  margin-top: 50px;
+  margin-left: 70px;
+}
+
+
+.flip-card-front, 
+.flip-card-back {
+box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+position: absolute;
+display: flex;
+flex-direction: column; 
+justify-content: center;
+width: 100%;
+height: 100%;
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+border: 0.5px solid #000000;
+border-radius: 0.3em;
+}
+.flip-card-front {
+background: linear-gradient(160deg, #000000 30%, transparent);
+color: #0b0909;
+}
+
+.flip-card-back {
+background: linear-gradient(160deg,  #cfcfd8 30%, transparent); 
+color: #171616;
+transform: rotateY(180deg);
+}
+.flip-card { 
+  display: flex;
+  justify-content: space-around;
+
+  background-color: black, transparent;
+width: 240px; 
+height: 354px;
+perspective: 1000px; 
+font-family: sans-serif; 
+margin-left: 250px;
+margin-top: 100px;
+}
+.title {
+font-size: 100%;
+font-weight: 900;
+text-align: center;
+margin: 0;
+width:240px ;
+height:289px ;
+}
+
+.flip-card-inner {
+position: relative; 
+width: 100%;
+height: 100%; 
+text-align: center; 
+transition: transform 0.5s; 
+transform-style: preserve-3d; 
+}
+
+.flip-card:hover .flip-card-inner {
+transform: rotateY(180deg);
+}
+
+/* .flip-card-new { 
+  display: grid;
+  
+
+  background-color: black, transparent;
+width: 240px; 
+height: 354px;
+perspective: 1000px; 
+font-family: sans-serif; 
+margin-left: 700px;
+
+margin-bottom: px;
+} */
+.flip-card-new {
+  display: grid;
+  background-color: black, transparent;
+  width: 240px; 
+  height: 354px;
+  perspective: 1000px; 
+  font-family: sans-serif; 
+  margin-left: 700px;
+  margin-top: -810px; /* Adjust this value as needed */
+  margin-bottom: px;
+}
+
+.flip-card-new:hover .flip-card-inner {
+transform: rotateY(180deg);
+}
+.flip-card-new1 {
+  display: grid;
+  background-color: black, transparent;
+  width: 240px; 
+  height: 354px;
+  perspective: 1000px; 
+  font-family: sans-serif; 
+  margin-left: 700px;
+    margin-top: 100px;
+}
+
+.flip-card-new1:hover .flip-card-inner {
+transform: rotateY(180deg);
+}
+.flip-card-fresh {
+  display: grid;
+  background-color: black, transparent;
+  width: 240px; 
+  height: 354px;
+  perspective: 1000px; 
+  font-family: sans-serif; 
+  margin-left: 1200px;
+    margin-top: -810px;
+}
+
+.flip-card-fresh:hover .flip-card-inner {
+transform: rotateY(180deg);
+}
+.flip-card-fresh1 {
+  display: grid;
+  background-color: black, transparent;
+  width: 240px; 
+  height: 354px;
+  perspective: 1000px; 
+  font-family: sans-serif; 
+  margin-left: 1200px;
+    margin-top: 100px;
+   
+}
+
+.flip-card-fresh1:hover .flip-card-inner {
+transform: rotateY(180deg);
+}
+
+/* Styles for the cart button */
+.cart-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color:#2a2d2a7a;
   color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 150px;
+  margin-left: 45px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Styles for the cart button on hover */
+.cart-button:hover {
+  background-color: #4d4ae7e4;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Styles for the cart button when disabled */
+.cart-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.cart-button:active{
+  background-color: #45a049; 
+    animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+
+  
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translateX(-2px); /* Shake left */
   }
-  to {
-    transform: rotate(360deg);
+   100% {
+    transform: translateX(0); /* Back to the original position */
   }
+}
+
+/* .head-cart{
+  display:block;
+  text-align: center;
+  font-family:Arial, Helvetica, sans-serif; 
+  font-size: 250%;
+  font-weight: 1000;
+  background-color:;
+} */
+
+.head-cart {
+  display: inline-block;
+
+  padding: 20px 200px;
+  background-color: #333833;
+  color: white;
+  border:#0b0909;
+  cursor: pointer;
+   border-radius: 4px;
+   margin-left: 550px;
+}
+
+
+
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.cart-table th {
+  font-size: 18px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px;
+}
+
+.cart-table td {
+  font-size: 16px;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.item-name {
+  font-size: 18px;
+}
+
+.item-price {
+  font-size: 18px;
+}
+
+.total {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.total-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4CAF50;
+}
+.cart-table {
+  width: 100%;
+  border-collapse: separate; /* Use 'separate' to enable border-spacing */
+  border-spacing: 30px; /* Add more space between rows (adjust as needed) */
+  margin-top: 20px;
+}
+
+.cart-button-new {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color:#2a2d2a7a;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 150px;
+  margin-left: 1255px;
+  margin-bottom: 60px;
+}
+
+/* Styles for the cart button on hover */
+.cart-button-new:hover {
+  background-color: #4d4ae7e4;
+}
+
+/* Styles for the cart button when disabled */
+.cart-button-new:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.cart-button-new:active{
+  background-color: #45a049; 
+    animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+
+  
+}
+
+.card-container{
+  margin-bottom: 60px;
 }
